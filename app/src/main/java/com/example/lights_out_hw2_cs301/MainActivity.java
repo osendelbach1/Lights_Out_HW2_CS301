@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
 
         //setting each button assigned to a the board via index and ID
+        reset = findViewById(R.id.reset);
+        txtV = findViewById(R.id.textView);
         gameBoard[0] = findViewById(R.id.button0);
         gameBoard[1] = findViewById(R.id.button1);
         gameBoard[2] = findViewById(R.id.button2);
@@ -82,6 +84,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gameBoard[23] = findViewById(R.id.button23);
         gameBoard[24] = findViewById(R.id.button24);
 
-
+        //implimenting the onClick listener for every button
+        (Button button: gameBoard)
+        {
+            gameBoard.setOnClickListener(this);
+        }
+        reset.setOnClickListener(this);
+        gameBoardStart();//starts game
     }
 }
